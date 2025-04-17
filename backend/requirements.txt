@@ -4,3 +4,12 @@ python-dotenv
 pydantic
 requests
 cassandra-driver
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+astrapy
+boto3
+python-speech-recognition
+google-cloud-speech
+pytest
+httpx
