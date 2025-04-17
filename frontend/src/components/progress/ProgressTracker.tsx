@@ -55,6 +55,7 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 export const ProgressTracker: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState<Statistics | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchStatistics = async () => {
@@ -63,6 +64,7 @@ export const ProgressTracker: React.FC = () => {
         setStats(response.data);
       } catch (error) {
         console.error('Error fetching statistics:', error);
+        setError('Failed to load progress data. Please try again later.');
       } finally {
         setLoading(false);
       }
@@ -75,6 +77,16 @@ export const ProgressTracker: React.FC = () => {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" minHeight="60vh">
         <CircularProgress />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" minHeight="60vh">
+        <Typography color="error" variant="h6">
+          {error}
+        </Typography>
       </Box>
     );
   }
