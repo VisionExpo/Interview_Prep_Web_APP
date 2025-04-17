@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Body
 from typing import List
 from ..models.user import UserCreate, User, UserInDB
 from ..utils.auth import (

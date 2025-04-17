@@ -9,7 +9,8 @@ passlib[bcrypt]
 python-multipart
 astrapy
 boto3
-python-speech-recognition
+# python-speech-recognition  # Commented out due to installation issues
 google-cloud-speech
 pytest
 httpx
+email-validator  # Added for email validation
